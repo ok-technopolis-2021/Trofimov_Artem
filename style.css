@@ -41,7 +41,8 @@ body {
 }
 
 .cv__header {
-    
+    font-size: 40pt;
+    margin-bottom: 20px;
 }
 
 .cv__main {
@@ -49,7 +50,7 @@ body {
   flex-grow: 3;
   flex-direction: column;
 
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -58,6 +59,7 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: 38px;
+  margin-top: -20px;
   line-height: 44px;
   color: #ffffff;
 }
@@ -66,8 +68,10 @@ body {
   font-family: Helvetica;
   font-style: normal;
   font-weight: normal;
+  margin-top: -20px;
   font-size: 20px;
-  margin-top: 8px;
+
+ 
   line-height: 23px;
   text-align: center;
   color: #ffffff;
@@ -119,6 +123,7 @@ body {
   border-radius: 50%;
   width: 180px;
   height: 180px;
+  margin-top: 10%;
   background: #c4c4c4;
 }
 
@@ -143,6 +148,22 @@ body {
 
   color: #ffffff;
 } 
+
+.cv__links {
+  display: flex;
+  width: 100%;
+  margin-top: -20px;
+  justify-content: center;
+}
+
+.cv__links_item {
+  margin-right: 10px;
+  width: 24px;
+height: 24px;
+background: #C4C4C4;
+display: block;
+border-radius: 50%;
+}
 
 .cv__download:hover {
     padding: 3% 7%;
