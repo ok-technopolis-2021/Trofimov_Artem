@@ -1,9 +1,22 @@
+@import 'reset.scss';
+
+:root {
+  --main-color-left: #444444;
+  --main-color-right: #222222;
+  --main-color-text: white;
+  --main-background-color: white;
+}
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+  background-color: var(--main-background-color, white);
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .main {
@@ -14,7 +27,7 @@ body {
   margin-right: auto;
   align-items: center;
   justify-content: flex-start;
-  background: #444444;
+  background-color: var(--main-color-left, #222222);
   width: 1127px;
   height: 595px;
   border-radius: 30px;
@@ -37,12 +50,12 @@ body {
   flex-grow: 3;
   height: 595px;
   border-radius: 30px;
-  background: #222222;
+  background-color: var(--main-color-right, #444444);
 }
 
 .cv__header {
-    font-size: 40pt;
-    margin-bottom: 20px;
+  font-size: 40pt;
+  margin-bottom: 20px;
 }
 
 .cv__main {
@@ -55,26 +68,25 @@ body {
 }
 
 .cv__name {
-  font-family: Helvetica;
+
   font-style: normal;
   font-weight: bold;
   font-size: 38px;
   margin-top: -20px;
   line-height: 44px;
-  color: #ffffff;
+  color: var(--main-color-text, white);
 }
 
 .cv__job {
-  font-family: Helvetica;
   font-style: normal;
   font-weight: normal;
   margin-top: -20px;
   font-size: 20px;
 
- 
+
   line-height: 23px;
   text-align: center;
-  color: #ffffff;
+  color: var(--main-color-text, white);
 }
 
 .cv__footer {
@@ -84,39 +96,35 @@ body {
 }
 
 .cv__footer_text {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
+
   font-size: 14px;
   line-height: 16px;
-  color: #ffffff;
+  color: var(--main-color-text, white);
 }
 
 .cv__download {
   justify-items: center;
   width: fit-content;
   padding: 2% 5%;
-  background-color: #444444;
-  border: 3px solid #ffffff;
+  background-color: var(--main-color-left, #444444);
+  border: 3px solid var(--main-color-text, white);
   box-sizing: border-box;
   border-radius: 40px;
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
+
   font-size: 17px;
   line-height: 20px;
   text-align: center;
 
-  color: #ffffff;
+  color: var(--main-color-text, white);
   transition: background-color 0.5s, padding 0.5s, font-size 0.5s;
 }
 
 .cv__button_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 15%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: 100%;
 }
 
 .cv__avatar {
@@ -127,27 +135,14 @@ body {
   background: #c4c4c4;
 }
 
- .protfolio__content:first-child {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 62px;
-  line-height: 71px;
-  text-align: center;
-
-  color: #ffffff;
-}
 
 .protfolio__content:last-child {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
   font-size: 22px;
   line-height: 25px;
   text-align: center;
 
-  color: #ffffff;
-} 
+  color: var(--main-color-text, white);
+}
 
 .cv__links {
   display: flex;
@@ -159,15 +154,15 @@ body {
 .cv__links_item {
   margin-right: 10px;
   width: 24px;
-height: 24px;
-background: #C4C4C4;
-display: block;
-border-radius: 50%;
+  height: 24px;
+  background: #C4C4C4;
+  display: block;
+  border-radius: 50%;
 }
 
-.cv__download:hover {
-    padding: 3% 7%;
-  background-color: #313131;
-  font-size: 21px;
-  transition: background-color 0.5s, padding 0.5s, font-size 0.5s;
+.cv__download {
+  &:hover {
+    background-color: var(--main-color-right);
+    transition: background-color 0.5s;
+  }
 }
