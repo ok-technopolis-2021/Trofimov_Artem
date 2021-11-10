@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 4.6;
+  height: 595px;
+  border-radius: 30px;
+  background-color: var(--main-color-right, #444444);
+}
+
+.card__header {
+  font-size: 40pt;
+  margin-bottom: 20px;
+}
+
+.content:last-child {
+  font-size: 22px;
+  text-align: center;
+  color: var(--main-color-text, white);
+}
