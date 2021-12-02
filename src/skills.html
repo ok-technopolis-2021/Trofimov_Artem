@@ -4,160 +4,7 @@
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>My skills</title>
-    <style>
-        :root {
-            --progress-bar-height: 9px
-        }
-
-        body {
-            font-family: "Roboto", serif;
-        }
-
-        .skills {
-            width: 20em;
-            background-color: #252626;
-            color: #f1f0f0;
-            border-radius: 5px;
-        }
-
-        .display-none {
-            display: none;
-        }
-
-        .progress-bar_value {
-            opacity: 0.6;
-        }
-
-        .center {
-            margin: 0 auto;
-        }
-
-        li {
-            list-style-type: none;
-        }
-
-        .skills__list-item {
-            margin-bottom: 0.5em;
-        }
-
-        .skills__list-item-header {
-            font-weight: bold;
-        }
-
-        .delete-btn {
-            vertical-align: middle;
-            cursor: pointer;
-            margin-left: 0.6em;
-        }
-
-
-        .flex {
-            display: flex;
-            align-items: center;
-        }
-
-        progress {
-            background-color: #f3f3f3;
-            border: 0;
-            height: var(--progress-bar-height);
-            border-radius: 9px;
-        }
-
-        .progress-bar-container {
-            height: var(--progress-bar-height);
-            margin-top: 0.3em;
-            margin-bottom: 0.3em;
-
-        }
-
-        progress::-webkit-progress-bar {
-            background-color: #f3f3f3;
-            border: 0;
-            height: var(--progress-bar-height);
-            border-radius: 9px;
-        }
-
-        progress::-webkit-progress-value {
-            background-color: #0b4d65;
-            border: 0;
-            height: var(--progress-bar-height);
-            border-radius: 9px;
-        }
-
-        #new-skill-form > input, button {
-            display: block;
-            margin-bottom: 0.5em;
-        }
-
-        .new-skill-form__input {
-            width: 10em;
-            border-color: #C4C4C4;
-            padding: 0.5em;
-            border-style: solid;
-            border-radius: 5px;
-        }
-
-        .new-skill-form__button {
-            border-radius: 15px;
-            border-style: solid;
-            border-width: 3px;
-            color: #b4b4b4;
-            padding: 2px 15px;
-            text-align: center;
-            text-decoration: none;
-            background-color: black;
-            border-color: #251d50;
-
-        }
-
-        .unselectable {
-            -webkit-touch-callout: none; /* iOS Safari */
-            -webkit-user-select: none;   /* Chrome/Safari/Opera */
-            -khtml-user-select: none;    /* Konqueror */
-            -moz-user-select: none;      /* Firefox */
-            -ms-user-select: none;       /* Internet Explorer/Edge */
-            user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
-        }
-
-        .button-add {
-            align-self: start;
-            background-color: #0b4d65;
-            border: none;
-            color: rgb(255, 255, 255);
-            margin-left: 2em;
-            padding: 0.2em 0.5em;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            text-align: center;
-            opacity: 0.6;
-            transition: 0.3s;
-            justify-self: end;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button-add:hover {
-            opacity: 1
-        }
-
-        .skills__form-container {
-            padding-left: 0.5em;
-            padding-right: 0.5em;
-            align-self: start;
-            padding-top: 0.5em;
-            background-color: #252626;
-            height: fit-content;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-
-        .skills__list {
-            min-width: 10em;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="styles/skills.css">
 </head>
 <body>
 <div class="skills center flex">
@@ -166,7 +13,7 @@
         </ul>
         <div id="btn-show-form" class="button-add unselectable">New</div>
     </div>
-    <div id="new-skill-form-container" class="skills__form-container">
+    <div id="new-skill-form-container" class="skills__form-container display-none">
         <form id="new-skill-form" name="new-skill">
             <input class="new-skill-form__input" type="text" placeholder="Skill name" name="title"/>
             <input class="new-skill-form__input" type="number" min="0" max="100" placeholder="Skill ratio"
@@ -175,7 +22,6 @@
         </form>
     </div>
 </div>
-
 
 <script src="Skill.js"></script>
 </body>

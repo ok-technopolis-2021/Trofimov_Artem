@@ -43,7 +43,7 @@ class Skill {
         deleteBtn.innerHTML = this.svgDelete;
 
         const progressValue = document.createElement("span");
-        progressValue.innerText = this.value;
+        progressValue.innerText = this.value + "%";
         progressValue.classList.add("progress-bar_value");
 
         progressbarContainer.appendChild(progress);
@@ -74,24 +74,23 @@ document.getElementById("add-skill").addEventListener('click', (e) => {
     let ratio = Number.parseInt(inputs.namedItem("ratio").value);
     let title = inputs.namedItem("title").value;
 
-    if (isNaN(ratio) || title === '')
-    {
-        console.log("asd");
-    }
-    else
-    {
+    if (isNaN(ratio) || title === '') {
+        alert("Incorrect input");
+    } else {
         title = replaceAll(title, '<script>', '&gt;');
         title = replaceAll(title, '<', '&lt;');
         new Skill(title, ratio).render(document.getElementsByClassName("skills__list")[0]);
     }
+    inputs.namedItem("ratio").value = "";
+    inputs.namedItem("title").value = "";
 
 });
 
 
-new Skill('HTML', 20).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('jidf', 40).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('dskn', 90).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('vp', 10).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('HTML', 30).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('JS', 20).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('CSS', 25).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('React', 5).render(document.getElementsByClassName("skills__list")[0]);
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
