@@ -43,6 +43,7 @@ li {
     vertical-align: middle;
     cursor: pointer;
     margin-left: 0.6em;
+    content: url("../assets/delete.svg");
 }
 
 
