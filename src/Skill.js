@@ -40,7 +40,9 @@ class Skill {
 
         deleteBtn.addEventListener('click', () => {
             parent.removeChild(li);
-            this.onSkillRemove();
+            if (this.onSkillRemove !== undefined) {
+                this.onSkillRemove();
+            }
         });
 
     }
@@ -53,9 +55,9 @@ document.getElementById("btn-show-form").addEventListener('click', () => {
 
 inputs = document.getElementById("new-skill-form").getElementsByClassName("new-skill-form__input");
 
-document.getElementById("add-skill").addEventListener('click', (e) => {
+document.getElementById("new-skill-form").addEventListener('submit', (e) => {
     e.preventDefault();
-    let ratio = Number.parseInt(inputs.namedItem("ratio").value);
+    const ratio = Number.parseInt(inputs.namedItem("ratio").value);
     let title = inputs.namedItem("title").value;
 
     if (isNaN(ratio) || title === '') {
@@ -63,9 +65,7 @@ document.getElementById("add-skill").addEventListener('click', (e) => {
     } else {
         title = replaceAll(title, '<script>', '&gt;');
         title = replaceAll(title, '<', '&lt;');
-        new Skill(title, ratio, function () {
-            alert(title + " has been deleted")
-        }).render(document.getElementsByClassName("skills__list")[0]);
+        new Skill(title, ratio).render(document.getElementsByClassName("skills__list")[0]);
     }
     inputs.namedItem("ratio").value = "";
     inputs.namedItem("title").value = "";
@@ -73,16 +73,10 @@ document.getElementById("add-skill").addEventListener('click', (e) => {
 });
 
 
-new Skill('HTML', 30, function () {
-    alert("Deleted")
-}).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('JS', 20, function () {
-    alert("Deleted")
-}).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('CSS', 25, function () {
-}).render(document.getElementsByClassName("skills__list")[0]);
-new Skill('React', 5, function () {
-}).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('HTML', 30).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('JS', 20).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('CSS', 25).render(document.getElementsByClassName("skills__list")[0]);
+new Skill('React', 5).render(document.getElementsByClassName("skills__list")[0]);
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
